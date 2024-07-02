@@ -8,7 +8,7 @@ const rippleEffect = keyframes`
         opacity: 1;
     }
     to {
-        transform: scale(4);
+        transform: scale(6);
         opacity: 0;
     }
 `;

@@ -18,9 +18,9 @@ export const containedColorSchemeStyles: Record<
       rippleColor: "rgba(255, 255, 255, 0.3)",
     },
     pressed: {
-      backgroundColor: "rgba(78, 118, 252, 0.08)",
-      borderColor: "rgba(78, 118, 252, 0.5)",
-      textColor: "#4E76FC",
+      backgroundColor: "#4E76FC",
+      borderColor: "#4E76FC",
+      textColor: "#FFFFFF",
       rippleColor: "rgba(255, 255, 255, 0.3)",
     },
     disabled: {

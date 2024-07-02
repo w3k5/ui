@@ -81,6 +81,7 @@ export const StyledButton = styled.button<SizeVariantProps>`
     getVariantStyles(variant, colorScheme)};
   outline: none;
   z-index: 1;
+  font-family: "Open Sans", serif; /* Пример использования шрифта */
 
   &:enabled {
     cursor: pointer;

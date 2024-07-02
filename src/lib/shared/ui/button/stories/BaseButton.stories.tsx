@@ -2,6 +2,7 @@ import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { SizeVariantProps } from "../../../types";
 import { BaseButton } from "../components/BaseButton";
+import "../../../styles/index";
 
 export default {
   title: "Buttons/Base",
