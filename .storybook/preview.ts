@@ -1,4 +1,5 @@
-import type { Preview } from "@storybook/react";
+import { Preview } from "@storybook/react";
+import { DocsContainer, DocsPage } from "@storybook/addon-docs";
 
 const preview: Preview = {
   parameters: {
@@ -8,6 +9,10 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+    },
+    docs: {
+      container: DocsContainer,
+      page: DocsPage,
     },
   },
 };

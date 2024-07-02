@@ -18,6 +18,7 @@ const Root = styled.label`
     box-sizing: border-box;
   }
   display: inline-flex;
+  align-items: center;
   gap: 4px;
 `;
 
@@ -87,12 +88,12 @@ export const Switch = ({
   const api = zagSwitch.connect(state, send, normalizeProps);
 
   return (
-    <Root {...api.rootProps}>
-      <input {...api.hiddenInputProps} />
-      <Control {...{ ...api.controlProps }}>
-        <Thumb {...api.thumbProps} />
+    <Root {...api.getRootProps()}>
+      <input {...api.getHiddenInputProps()} />
+      <Control {...{ ...api.getControlProps() }}>
+        <Thumb {...api.getThumbProps()} />
       </Control>
-      {label && <Label {...api.labelProps}>{label}</Label>}
+      {label && <Label {...api.getLabelProps()}>{label}</Label>}
     </Root>
   );
 };

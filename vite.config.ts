@@ -8,7 +8,20 @@ import svgLoader from "vite-svg-loader";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      babel: {
+        plugins: [
+          [
+            "babel-plugin-styled-components",
+            {
+              displayName: true,
+              fileName: false,
+              pure: true,
+            },
+          ],
+        ],
+      },
+    }),
     svgLoader(),
     dts({
       insertTypesEntry: true,

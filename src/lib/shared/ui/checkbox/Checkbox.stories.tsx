@@ -15,7 +15,7 @@ export const Default: Story = {
   name: "Default Checkbox",
   args: {
     onChange: (checked) => console.log({ checked }),
-    label: "Label",
+    // label: "Label",
   },
 };
 
