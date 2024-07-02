@@ -18,7 +18,7 @@ interface PrimaryButtonProps
  */
 export const PrimaryButton: FC<PrimaryButtonProps> = (props) => {
   return (
-    <BaseButton {...props} variant="contained">
+    <BaseButton {...props} variant="contained" colorScheme="primary">
       {props.children}
     </BaseButton>
   );

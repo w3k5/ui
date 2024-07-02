@@ -20,7 +20,7 @@ export const SecondaryButton: FC<SecondaryButtonProps> = (
   props: SecondaryButtonProps,
 ): JSX.Element => {
   return (
-    <BaseButton {...props} variant="outlined">
+    <BaseButton {...props} variant="contained" colorScheme="secondary">
       {props.children}
     </BaseButton>
   );

@@ -1,45 +1,33 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { BaseButton, BaseButtonProps } from "../components/BaseButton";
+import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { SizeVariantProps } from "../../../types";
+import { BaseButton } from "../components/BaseButton";
 
-const meta: Meta<typeof BaseButton> = {
-  component: BaseButton,
+export default {
   title: "Buttons/Base",
-  argTypes: {
-    disabled: { control: "boolean" },
-    size: {
-      control: {
-        type: "select",
-        options: ["extra-small", "small", "medium", "large"],
-      },
-    },
-    variant: {
-      control: {
-        type: "select",
-        options: ["contained", "outlined", "text"],
-      },
-    },
-  },
-};
+  component: BaseButton,
+  tags: ["autodocs"],
+} as Meta<typeof BaseButton>;
 
-export default meta;
-
-type Story = StoryObj<BaseButtonProps>;
+type Story = StoryObj<
+  SizeVariantProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+>;
 
 export const Default: Story = {
-  name: "Default",
   args: {
     children: "Base Button",
-    size: "medium",
+    size: "M",
     variant: "contained",
+    colorScheme: "primary",
   },
 };
 
 export const Disabled: Story = {
-  name: "Disabled",
   args: {
-    disabled: true,
     children: "Disabled Base",
-    size: "medium",
+    size: "M",
     variant: "contained",
+    colorScheme: "primary",
+    disabled: true,
   },
 };

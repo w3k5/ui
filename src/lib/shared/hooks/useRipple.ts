@@ -1,7 +1,7 @@
 import type { MouseEvent } from "react";
 import { useCallback, useState } from "react";
 
-import { RIPPLE_SIZE } from "../ui/button/styles/Button.styles.ts";
+export const RIPPLE_SIZE = 100;
 
 export interface RippleProps {
   x: number;

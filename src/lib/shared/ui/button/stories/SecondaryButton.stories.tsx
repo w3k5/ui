@@ -1,38 +1,29 @@
-import type { Meta, StoryObj } from "@storybook/react";
-
+import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { SizeVariantProps } from "../../../types";
 import { SecondaryButton } from "../components/SecondaryButton";
 
-const meta: Meta<typeof SecondaryButton> = {
-  component: SecondaryButton,
+export default {
   title: "Buttons/Secondary",
-  argTypes: {
-    disabled: { control: "boolean" },
-    size: {
-      control: {
-        type: "select",
-        options: ["extra-small", "small", "medium", "large"],
-      },
-    },
-  },
-};
+  component: SecondaryButton,
+  tags: ["autodocs"],
+} as Meta<typeof SecondaryButton>;
 
-export default meta;
-
-type Story = StoryObj<typeof SecondaryButton>;
+type Story = StoryObj<
+  SizeVariantProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+>;
 
 export const Default: Story = {
-  name: "Default",
   args: {
     children: "Secondary Button",
-    size: "medium",
+    size: "M",
   },
 };
 
 export const Disabled: Story = {
-  name: "Disabled",
   args: {
-    disabled: true,
     children: "Disabled Secondary",
-    size: "medium",
+    size: "M",
+    disabled: true,
   },
 };

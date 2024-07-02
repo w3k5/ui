@@ -1,31 +1,29 @@
-import type { FC, MouseEvent } from "react";
-import React from "react";
-
-import type { RippleProps } from "../../../hooks/useRipple";
+import React, { FC, MouseEvent, ReactNode } from "react";
+import { RippleContainer } from "../RippleContainer.tsx";
+import { StyledButton } from "../styles/Button.styles";
 import { useRipple } from "../../../hooks/useRipple";
-import type { SizeVariantProps } from "../../../types/buttonTypes";
-import { Ripple, RippleContainer, StyledButton } from "../styles/Button.styles";
+import { SizeVariantProps } from "../../../types/uiTypes";
 
-export interface BaseButtonProps
+interface BaseButtonProps
   extends SizeVariantProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   rippleDuration?: string;
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
 }
 
-/**
- * Базовый компонент кнопки, поддерживающий размеры и варианты.
- *
- * @param {BaseButtonProps} props Пропсы компонента
- * @returns {JSX.Element} Базовый компонент кнопки
- */
 export const BaseButton: FC<BaseButtonProps> = ({
   onClick,
   children,
   rippleDuration = "0.6s",
-  size = "small",
+  size = "S",
   variant = "contained",
+  colorScheme = "primary",
+  startIcon,
+  endIcon,
   ...props
-}: BaseButtonProps): JSX.Element => {
+}) => {
   const { ripples, createRipple, handleAnimationEnd } = useRipple();
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -38,20 +36,19 @@ export const BaseButton: FC<BaseButtonProps> = ({
       onClick={handleClick}
       size={size}
       variant={variant}
+      colorScheme={colorScheme}
       {...props}
     >
+      {startIcon}
       {children}
-      <RippleContainer>
-        {ripples.map((ripple: RippleProps) => (
-          <Ripple
-            key={ripple.key}
-            x={ripple.x}
-            y={ripple.y}
-            duration={rippleDuration}
-            onAnimationEnd={() => handleAnimationEnd(ripple.key)}
-          />
-        ))}
-      </RippleContainer>
+      {endIcon}
+      <RippleContainer
+        ripples={ripples}
+        handleAnimationEnd={handleAnimationEnd}
+        rippleDuration={rippleDuration}
+        colorScheme={colorScheme}
+        variant={variant}
+      />
     </StyledButton>
   );
 };

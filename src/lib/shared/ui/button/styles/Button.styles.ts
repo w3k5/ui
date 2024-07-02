@@ -1,128 +1,88 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
+import { Variant, SizeVariantProps, ColorScheme } from "../../../types";
+import { colorSchemeStyles } from "../../styles/colorSchemeStyles";
 
-import type { SizeVariantProps } from "../../types/buttonTypes";
+const sizeStyles = {
+  XXS: css`
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 13px;
+    line-height: 20px;
+  `,
+  XS: css`
+    border-radius: 6px;
+    padding: 4px 6px;
+    font-size: 13px;
+    line-height: 20px;
+  `,
+  S: css`
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 20px;
+  `,
+  M: css`
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 15px;
+    line-height: 20px;
+  `,
+  L: css`
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 15px;
+    line-height: 20px;
+  `,
+};
 
-/**
- * Анимация для эффекта Ripple.
- */
-const rippleEffect = keyframes`
-    from {
-        transform: scale(0);
-        opacity: 1;
-    }
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
+const getVariantStyles = (variant: Variant, colorScheme: ColorScheme) => css`
+  background-color: ${colorSchemeStyles[variant][colorScheme].idle
+    .backgroundColor};
+  border: none;
+  color: ${colorSchemeStyles[variant][colorScheme].idle.textColor};
+  box-shadow: inset 0 0 0 1px
+    ${colorSchemeStyles[variant][colorScheme].idle.borderColor};
+  &:hover:not([disabled]) {
+    background-color: ${colorSchemeStyles[variant][colorScheme].hover
+      .backgroundColor};
+    box-shadow: inset 0 0 0 1px
+      ${colorSchemeStyles[variant][colorScheme].hover.borderColor};
+  }
+  &:active:not([disabled]) {
+    background-color: ${colorSchemeStyles[variant][colorScheme].pressed
+      .backgroundColor};
+    box-shadow: inset 0 0 0 1px
+      ${colorSchemeStyles[variant][colorScheme].pressed.borderColor};
+  }
+  &:focus:not([disabled]) {
+    background-color: ${colorSchemeStyles[variant][colorScheme].hover
+      .backgroundColor};
+    box-shadow: inset 0 0 0 1px
+      ${colorSchemeStyles[variant][colorScheme].hover.borderColor};
+  }
+  &:disabled {
+    background-color: ${colorSchemeStyles[variant][colorScheme].disabled
+      .backgroundColor};
+    box-shadow: inset 0 0 0 1px
+      ${colorSchemeStyles[variant][colorScheme].disabled.borderColor};
+    color: ${colorSchemeStyles[variant][colorScheme].disabled.textColor};
+    cursor: not-allowed;
+  }
 `;
 
-/**
- * Размер эффекта Ripple.
- */
-export const RIPPLE_SIZE = 100;
-
-/**
- * Стили для различных размеров кнопки.
- */
-const sizeStyles = {
-  "extra-small": css`
-    padding: 4px 8px;
-    font-size: 12px;
-  `,
-  small: css`
-    padding: 6px 12px;
-    font-size: 14px;
-  `,
-  medium: css`
-    padding: 8px 16px;
-    font-size: 16px;
-  `,
-  large: css`
-    padding: 10px 20px;
-    font-size: 18px;
-  `,
-};
-
-/**
- * Стили для различных вариантов кнопки.
- */
-const variantStyles = {
-  outlined: css`
-    background-color: transparent;
-    border: 1px solid #6200ea;
-    color: #6200ea;
-  `,
-  contained: css`
-    background-color: #6200ea;
-    border: none;
-    color: #ffffff;
-  `,
-  text: css`
-    background-color: transparent;
-    border: none;
-    color: #6200ea;
-  `,
-};
-
-/**
- * Стили для кнопки с учетом размера и варианта.
- */
 export const StyledButton = styled.button<SizeVariantProps>`
   position: relative;
   overflow: hidden;
   display: inline-flex;
+  align-items: center;
   box-sizing: border-box;
-  ${({ size = "small" }) => sizeStyles[size]};
-  ${({ variant = "contained" }) => variantStyles[variant]};
+  ${({ size = "S" }) => sizeStyles[size]};
+  ${({ variant = "contained", colorScheme = "primary" }) =>
+    getVariantStyles(variant, colorScheme)};
   outline: none;
   z-index: 1;
 
   &:enabled {
     cursor: pointer;
   }
-
-  &:hover:not([disabled]) {
-    box-shadow: 2px 2px 0 black;
-  }
-
-  &:focus:not([disabled]) {
-    background-color: ${({ variant }) =>
-      variant === "contained" ? "#3700b3" : "rgba(98, 0, 234, 0.1)"};
-  }
-
-  &:disabled {
-    border-color: #676767;
-    background-color: #d4d4d4;
-    color: #727272;
-    cursor: not-allowed;
-  }
-`;
-
-/**
- * Контейнер для эффекта Ripple.
- */
-export const RippleContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-`;
-
-/**
- * Элемент для эффекта Ripple.
- */
-export const Ripple = styled.span<{ x: number; y: number; duration?: string }>`
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-  width: ${RIPPLE_SIZE}px;
-  height: ${RIPPLE_SIZE}px;
-  left: ${({ x }) => x}px;
-  top: ${({ y }) => y}px;
-  transform: scale(0);
-  animation: ${rippleEffect} ${({ duration = "0.6s" }) => duration} linear;
-  pointer-events: none;
-  z-index: 0;
 `;

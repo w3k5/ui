@@ -1,38 +1,29 @@
-import type { Meta, StoryObj } from "@storybook/react";
-
+import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { SizeVariantProps } from "../../../types";
 import { IconButton } from "../components/IconButton";
 
-const meta: Meta<typeof IconButton> = {
-  component: IconButton,
+export default {
   title: "Buttons/Icon",
-  argTypes: {
-    disabled: { control: "boolean" },
-    size: {
-      control: {
-        type: "select",
-        options: ["extra-small", "small", "medium", "large"],
-      },
-    },
-  },
-};
+  component: IconButton,
+  tags: ["autodocs"],
+} as Meta<typeof IconButton>;
 
-export default meta;
-
-type Story = StoryObj<typeof IconButton>;
+type Story = StoryObj<
+  SizeVariantProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+>;
 
 export const Default: Story = {
-  name: "Default",
   args: {
-    children: "Icon",
-    size: "medium",
+    children: "",
+    size: "M",
   },
 };
 
 export const Disabled: Story = {
-  name: "Disabled",
   args: {
-    disabled: true,
     children: "Disabled Icon",
-    size: "medium",
+    size: "M",
+    disabled: true,
   },
 };

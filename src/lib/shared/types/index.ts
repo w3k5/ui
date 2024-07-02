@@ -1,2 +1,2 @@
-// Экспорт типов для кнопок
-export * from "./buttonTypes";
+export * from "./colorSchemeTypes";
+export * from "./uiTypes";
