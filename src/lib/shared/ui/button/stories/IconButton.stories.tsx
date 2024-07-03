@@ -1,30 +1,30 @@
-import React from "react";
+import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { SizeVariantProps } from "../../../types";
 import { IconButton } from "../components/IconButton";
 import "../../../styles/index";
+import DocumentFile from "../../../../../assets/icons/DocumentFile.svg?react";
 
 export default {
   title: "Buttons/Icon",
   component: IconButton,
-  tags: ["autodocs"],
+  argTypes: {
+    children: {
+      control: "select",
+    },
+  },
 } as Meta<typeof IconButton>;
 
-type Story = StoryObj<
-  SizeVariantProps & React.ButtonHTMLAttributes<HTMLButtonElement>
->;
+type Story = StoryObj<ComponentProps<typeof IconButton>>;
 
 export const Default: Story = {
   args: {
-    children: "",
-    size: "M",
+    children: <DocumentFile />,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    children: "Disabled Icon",
-    size: "M",
+    children: <DocumentFile />,
     disabled: true,
   },
 };

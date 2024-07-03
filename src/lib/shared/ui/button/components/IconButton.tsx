@@ -1,26 +1,20 @@
-import type { FC } from "react";
+import type { FC, ReactElement } from "react";
 import React from "react";
-
-import type { Size } from "../../../types";
-
-import { BaseButton } from "./BaseButton";
+import type { SizeVariantProps } from "../../../types";
+import { StyledIconButton } from "../styles/Button.styles.ts";
 
 interface BaseButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  size?: Size;
-  rippleDuration?: string;
-}
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    SizeVariantProps {}
 
 /**
  * Компонент кнопки Icon.
  *
  * @param {BaseButtonProps} props Пропсы компонента
- * @returns {JSX.Element} Компонент кнопки Icon
+ * @returns {ReactElement} Компонент кнопки Icon
  */
-export const IconButton: FC<BaseButtonProps> = (props) => {
-  return (
-    <BaseButton {...props} variant="text">
-      {props.children}
-    </BaseButton>
-  );
+export const IconButton: FC<BaseButtonProps> = (
+  props: BaseButtonProps,
+): ReactElement => {
+  return <StyledIconButton {...props}>{props.children}</StyledIconButton>;
 };

@@ -86,19 +86,19 @@ export const containedColorSchemeStyles: Record<
     idle: {
       backgroundColor: "#FF6600",
       borderColor: "#FF6600",
-      textColor: "#000000",
+      textColor: "#FFFFFF",
       rippleColor: "rgba(255, 255, 255, 0.3)",
     },
     hover: {
       backgroundColor: "#E25C02",
       borderColor: "#E25C02",
-      textColor: "#000000",
+      textColor: "#FFFFFF",
       rippleColor: "rgba(255, 255, 255, 0.3)",
     },
     pressed: {
       backgroundColor: "rgba(255, 102, 0, 0.08)",
       borderColor: "rgba(255, 102, 0, 0.5)",
-      textColor: "#FF6600",
+      textColor: "#FFFFFF",
       rippleColor: "rgba(255, 102, 0, 0.3)",
     },
     disabled: {

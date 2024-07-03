@@ -1,7 +1,7 @@
-import React from "react";
+import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { SizeVariantProps } from "../../../types";
 import { BaseButton } from "../components/BaseButton";
+import ArrowDown from "../../../../../assets/icons/ArrowDown.svg?react";
 import "../../../styles/index";
 
 export default {
@@ -10,25 +10,25 @@ export default {
   tags: ["autodocs"],
 } as Meta<typeof BaseButton>;
 
-type Story = StoryObj<
-  SizeVariantProps & React.ButtonHTMLAttributes<HTMLButtonElement>
->;
+type Story = StoryObj<ComponentProps<typeof BaseButton>>;
 
 export const Default: Story = {
   args: {
     children: "Base Button",
-    size: "M",
-    variant: "contained",
-    colorScheme: "primary",
+    $size: "M",
+    $variant: "contained",
+    $colorScheme: "primary",
+    endIcon: <ArrowDown />,
+    startIcon: <ArrowDown />,
   },
 };
 
 export const Disabled: Story = {
   args: {
     children: "Disabled Base",
-    size: "M",
-    variant: "contained",
-    colorScheme: "primary",
+    $size: "M",
+    $variant: "contained",
+    $colorScheme: "primary",
     disabled: true,
   },
 };

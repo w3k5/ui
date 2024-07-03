@@ -1,7 +1,7 @@
 /**
  * Размеры для элементов интерфейса.
  */
-export type Size = "XXS" | "XS" | "S" | "M" | "L";
+export type Size = "3XS" | "2XS" | "XS" | "S" | "M" | "L";
 
 /**
  * Варианты для элементов интерфейса.
@@ -27,17 +27,17 @@ export interface SizeVariantProps {
    * Размер элемента интерфейса.
    * @default 'S'
    */
-  size?: Size;
+  $size?: Size;
 
   /**
    * Вариант элемента интерфейса.
    * @default 'contained'
    */
-  variant?: Variant;
+  $variant?: Variant;
 
   /**
    * Цветовая схема элемента интерфейса.
    * @default 'primary'
    */
-  colorScheme?: ColorScheme;
+  $colorScheme?: ColorScheme;
 }

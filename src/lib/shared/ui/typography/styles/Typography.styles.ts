@@ -56,7 +56,12 @@ const bodyStyles: Record<Size, RuleSet> = {
     font-size: 12px;
     line-height: 16px;
   `,
-  XXS: css`
+  "2XS": css`
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+  `,
+  "3XS": css`
     font-family: "Inter", sans-serif;
     font-size: 13px;
     line-height: 20px;

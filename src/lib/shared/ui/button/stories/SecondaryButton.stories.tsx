@@ -17,14 +17,14 @@ type Story = StoryObj<
 export const Default: Story = {
   args: {
     children: "Secondary Button",
-    size: "M",
+    $size: "M",
   },
 };
 
 export const Disabled: Story = {
   args: {
     children: "Disabled Secondary",
-    size: "M",
+    $size: "M",
     disabled: true,
   },
 };

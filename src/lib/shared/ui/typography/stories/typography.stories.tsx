@@ -54,7 +54,7 @@ export const Texts: TextStory = {
       <Text {...args} $level="XS">
         Body XS {args.$bold ? "Bold" : "Regular"} {args.$italic && "Italic"}
       </Text>
-      <Text {...args} $level="XXS">
+      <Text {...args} $level="2XS">
         Body EXTRAS {args.$bold ? "Bold" : "Regular"} {args.$italic && "Italic"}
       </Text>
     </div>
