@@ -7,7 +7,6 @@ export default {
   title: "Typography",
   component: Title,
   subcomponents: { Text },
-  tags: ["autodocs"],
 } as Meta<typeof Title>;
 
 type TitleStory = StoryObj<TitleProps>;

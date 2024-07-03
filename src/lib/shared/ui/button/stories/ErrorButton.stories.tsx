@@ -2,25 +2,25 @@ import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
 import ArrowDown from "../../../../../assets/icons/ArrowDown.svg?react";
 import { sizeOptions } from "../../../types";
-import { PrimaryButton } from "../components/PrimaryButton";
+import { ErrorButton } from "../components/ErrorButton";
 import "../../../styles/index";
 
 export default {
-  title: "Buttons/Primary",
-  component: PrimaryButton,
+  title: "Buttons/Error",
+  component: ErrorButton,
   argTypes: {
     $size: {
       control: "select",
       options: sizeOptions,
     },
   },
-} as Meta<typeof PrimaryButton>;
+} as Meta<typeof ErrorButton>;
 
-type Story = StoryObj<ComponentProps<typeof PrimaryButton>>;
+type Story = StoryObj<ComponentProps<typeof ErrorButton>>;
 
 export const Default: Story = {
   args: {
-    children: "Primary Button",
+    children: "Error Button",
     $size: "M",
     disabled: false,
     endIcon: <ArrowDown />,
@@ -29,7 +29,7 @@ export const Default: Story = {
 
 export const Disabled: Story = {
   args: {
-    children: "Disabled Primary",
+    children: "Disabled Error",
     $size: "M",
     disabled: true,
   },

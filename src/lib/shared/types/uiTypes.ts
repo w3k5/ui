@@ -3,6 +3,8 @@
  */
 export type Size = "3XS" | "2XS" | "XS" | "S" | "M" | "L";
 
+export const sizeOptions: Size[] = ["3XS", "2XS", "XS", "S", "M", "L"];
+
 /**
  * Варианты для элементов интерфейса.
  */
