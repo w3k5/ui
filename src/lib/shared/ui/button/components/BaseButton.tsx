@@ -1,14 +1,11 @@
-import React, { FC, MouseEvent, ReactNode } from "react";
-import { RippleContainer } from "../RippleContainer.tsx";
+import React, { FC, MouseEvent, ReactNode, useRef } from "react";
 import { StyledButton } from "../styles/Button.styles";
-import { useRipple } from "../../../hooks/useRipple";
 import { SizeVariantProps } from "../../../types/uiTypes";
 
 interface BaseButtonProps
   extends SizeVariantProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-  rippleDuration?: string;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
 }
@@ -16,7 +13,6 @@ interface BaseButtonProps
 export const BaseButton: FC<BaseButtonProps> = ({
   onClick,
   children,
-  rippleDuration = "0.6s",
   size = "S",
   variant = "contained",
   colorScheme = "primary",
@@ -24,12 +20,13 @@ export const BaseButton: FC<BaseButtonProps> = ({
   endIcon,
   ...props
 }) => {
-  const { ripples, createRipple, handleAnimationEnd } = useRipple();
+  const ref = useRef<HTMLButtonElement>(null);
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     onClick?.(event);
-    createRipple(event);
   };
+
+  console.log(ref.current?.clientWidth, ref.current?.offsetWidth);
 
   return (
     <StyledButton
@@ -37,18 +34,12 @@ export const BaseButton: FC<BaseButtonProps> = ({
       size={size}
       variant={variant}
       colorScheme={colorScheme}
+      ref={ref}
       {...props}
     >
       {startIcon}
       {children}
       {endIcon}
-      <RippleContainer
-        ripples={ripples}
-        handleAnimationEnd={handleAnimationEnd}
-        rippleDuration={rippleDuration}
-        colorScheme={colorScheme}
-        variant={variant}
-      />
     </StyledButton>
   );
 };

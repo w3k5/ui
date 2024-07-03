@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components";
+import styled, { css, RuleSet } from "styled-components";
+import { Size } from "../../../types";
 import { TitleProps, TextProps } from "../types";
 
 const headingStyles = {
@@ -34,7 +35,12 @@ const headingStyles = {
   `,
 };
 
-const bodyStyles = {
+const bodyStyles: Record<Size, RuleSet> = {
+  L: css`
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+  `,
   M: css`
     font-family: "Inter", sans-serif;
     font-size: 15px;
@@ -50,10 +56,10 @@ const bodyStyles = {
     font-size: 12px;
     line-height: 16px;
   `,
-  EXTRAS: css`
+  XXS: css`
     font-family: "Inter", sans-serif;
     font-size: 13px;
-    line-height: 18px;
+    line-height: 20px;
   `,
 };
 
@@ -66,15 +72,15 @@ const ellipsisStyles = css`
 export const Title = styled.div<TitleProps>`
   margin: 0;
   color: #1f2433;
-  ${({ level }) => headingStyles[level || 1]};
-  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
-  ${({ ellipsis }) => ellipsis && ellipsisStyles};
+  ${({ $level }) => headingStyles[$level || 1]};
+  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
+  ${({ $ellipsis }) => $ellipsis && ellipsisStyles};
 `;
 
 export const Text = styled.p<TextProps>`
   margin: 0;
-  ${({ level }) => bodyStyles[level]};
-  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
-  font-style: ${({ italic }) => (italic ? "italic" : "normal")};
-  ${({ ellipsis }) => ellipsis && ellipsisStyles};
+  ${({ $level = "M" }) => bodyStyles[$level]};
+  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
+  font-style: ${({ $italic }) => ($italic ? "italic" : "normal")};
+  ${({ $ellipsis }) => $ellipsis && ellipsisStyles};
 `;

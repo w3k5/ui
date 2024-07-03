@@ -1,7 +1,9 @@
 import type { FC } from "react";
 import React from "react";
+import { Text } from "../../typography";
 
 import type { Size } from "../../../types";
+import { TextButtonWrapper } from "../styles/Button.styles.ts";
 
 import { BaseButton } from "./BaseButton";
 
@@ -21,7 +23,9 @@ export const SecondaryButton: FC<SecondaryButtonProps> = (
 ): JSX.Element => {
   return (
     <BaseButton {...props} variant="contained" colorScheme="secondary">
-      {props.children}
+      <TextButtonWrapper $size={props.size}>
+        <Text children={props.children} $ellipsis $level={props.size} />
+      </TextButtonWrapper>
     </BaseButton>
   );
 };

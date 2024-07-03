@@ -1,37 +1,45 @@
 import styled, { css } from "styled-components";
-import { Variant, SizeVariantProps, ColorScheme } from "../../../types";
+import { Variant, SizeVariantProps, ColorScheme, Size } from "../../../types";
 import { colorSchemeStyles } from "../../styles/colorSchemeStyles";
 
 const sizeStyles = {
   XXS: css`
     border-radius: 6px;
     padding: 2px 6px;
-    font-size: 13px;
-    line-height: 20px;
   `,
   XS: css`
     border-radius: 6px;
     padding: 4px 6px;
-    font-size: 13px;
-    line-height: 20px;
   `,
   S: css`
     border-radius: 6px;
     padding: 6px 12px;
-    font-size: 13px;
-    line-height: 20px;
   `,
   M: css`
     border-radius: 8px;
     padding: 8px 16px;
-    font-size: 15px;
-    line-height: 20px;
   `,
   L: css`
     border-radius: 8px;
     padding: 14px 20px;
-    font-size: 15px;
-    line-height: 20px;
+  `,
+};
+
+const textStyles = {
+  L: css`
+    padding: 0 4px;
+  `,
+  M: css`
+    padding: 2px 4px;
+  `,
+  S: css`
+    padding: 0 4px;
+  `,
+  XS: css`
+    padding: 0 4px;
+  `,
+  XXS: css`
+    padding: 0 4px;
   `,
 };
 
@@ -53,13 +61,15 @@ const getVariantStyles = (variant: Variant, colorScheme: ColorScheme) => css`
       .backgroundColor};
     box-shadow: inset 0 0 0 1px
       ${colorSchemeStyles[variant][colorScheme].pressed.borderColor};
+    transform: scale(0.97);
   }
-  &:focus:not([disabled]) {
+  &:focus:not([disabled]):is(:hover) {
     background-color: ${colorSchemeStyles[variant][colorScheme].hover
       .backgroundColor};
     box-shadow: inset 0 0 0 1px
       ${colorSchemeStyles[variant][colorScheme].hover.borderColor};
   }
+
   &:disabled {
     background-color: ${colorSchemeStyles[variant][colorScheme].disabled
       .backgroundColor};
@@ -72,10 +82,8 @@ const getVariantStyles = (variant: Variant, colorScheme: ColorScheme) => css`
 
 export const StyledButton = styled.button<SizeVariantProps>`
   position: relative;
-  overflow: hidden;
-  display: inline-flex;
+  display: inline-grid;
   align-items: center;
-  box-sizing: border-box;
   ${({ size = "S" }) => sizeStyles[size]};
   ${({ variant = "contained", colorScheme = "primary" }) =>
     getVariantStyles(variant, colorScheme)};
@@ -86,4 +94,13 @@ export const StyledButton = styled.button<SizeVariantProps>`
   &:enabled {
     cursor: pointer;
   }
+  transition: 0.2s ease;
+`;
+
+interface TextButtonWrapperProps {
+  $size?: Size;
+}
+export const TextButtonWrapper = styled.div<TextButtonWrapperProps>`
+  ${({ $size = "M" }) => textStyles[$size]};
+  overflow: hidden;
 `;

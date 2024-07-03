@@ -2,11 +2,11 @@ import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { SizeVariantProps } from "../../../types";
 import { PrimaryButton } from "../components/PrimaryButton";
+import "../../../styles/index";
 
 export default {
   title: "Buttons/Primary",
   component: PrimaryButton,
-  tags: ["autodocs"],
 } as Meta<typeof PrimaryButton>;
 
 type Story = StoryObj<
@@ -15,8 +15,9 @@ type Story = StoryObj<
 
 export const Default: Story = {
   args: {
-    children: "Primary Button Large",
-    size: "L",
+    children: "Primary Button",
+    size: "M",
+    disabled: false,
   },
 };
 

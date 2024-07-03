@@ -7,8 +7,7 @@ module.exports = {
     { value: "docs", name: "docs:     Документация" },
     {
       value: "style",
-      name:
-          "style:    Изменения, не модифицирующие код,\n            код-стайл, форматирование, линтинг",
+      name: "style:    Изменения, не модифицирующие код,\n            код-стайл, форматирование, линтинг",
     },
     {
       value: "refactor",
@@ -21,16 +20,11 @@ module.exports = {
     { value: "test", name: "test:     Доработка тестов" },
     {
       value: "chore",
-      name:
-          "chore:    Изменения, связанные со сборкой,\n            генерация документации и прочее",
+      name: "chore:    Изменения, связанные со сборкой,\n            генерация документации и прочее",
     },
     { value: "revert", name: "revert:   Реверт коммита" },
-    { value: 'update', name: 'update:   Обновление зависимостей' }
+    { value: "update", name: "update:   Обновление зависимостей" },
   ],
-  allowCustomScopes: true,
-  allowTicketNumber: true,
-  isTicketNumberRequired: true,
-  ticketNumberRegExp: "\\d{1,6}",
 
   scopeOverrides: {
     chore: [
@@ -47,21 +41,18 @@ module.exports = {
     type: "Выберите вид вносимого изменения:",
     scope: "\nОпределите SCOPE этого изменения:",
     //ticketNumber: "Введите номер задачи в виде [A-Z]{1,10}-\\d{1,6}",
-    ticketNumber: 'Введите номер задачи (только цифры, максимум 6 цифр)',
+    ticketNumber: "Введите номер задачи (только цифры, максимум 6 цифр)",
     // used if allowCustomScopes is true
     customScope: "Введите SCOPE изменения:",
     subject: "Напишите КРАТКОЕ, ИМПЕРАТИВНОЕ описание изменения:\n",
-    body:
-        'Опишите ПОДРОБНОЕ описания изменения (необязательно). Вставьте "|" для перехода на новую строка:\n',
+    body: 'Опишите ПОДРОБНОЕ описания изменения (необязательно). Вставьте "|" для перехода на новую строка:\n',
     breaking: "Список BREAKING CHANGES (необязательно):\n",
     footer:
-        "Список ЗАКРЫТЫХ ЗАДАЧ (указать, если их несколько). Т.е.: GBO-31, GBO-34:\n",
+      "Список ЗАКРЫТЫХ ЗАДАЧ (указать, если их несколько). Т.е.: GBO-31, GBO-34:\n",
     confirmCommit: "Все выше указанное заполнено верно?",
   },
 
   allowBreakingChanges: ["feat"],
   subjectLimit: 100,
   footerPrefix: "Задачи:",
-  ticketNumberPrefix: 'PINQ-',
-  scopes: [{ name: 'pinq' }],
 };

@@ -2,6 +2,7 @@ import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { SizeVariantProps } from "../../../types";
 import { SecondaryButton } from "../components/SecondaryButton";
+import "../../../styles/index";
 
 export default {
   title: "Buttons/Secondary",
