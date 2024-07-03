@@ -2,7 +2,6 @@ export interface ColorSchemeState {
   backgroundColor: string;
   borderColor: string;
   textColor: string;
-  rippleColor: string;
 }
 
 export interface VariantColorSchemeConfig {
