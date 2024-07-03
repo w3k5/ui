@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { BaseButton } from "../components/BaseButton";
-import ArrowDown from "../../../../../assets/icons/ArrowDown.svg?react";
+import ArrowDown from "../../../icons/ArrowDown.svg?react";
 import "../../../styles/index";
 
 export default {

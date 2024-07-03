@@ -5,7 +5,7 @@ import { TextButtonWrapper } from "../styles/Button.styles.ts";
 
 import { BaseButton, BaseButtonProps } from "./BaseButton";
 
-type InfoButtonProps = Omit<BaseButtonProps, "$variant">;
+type InfoButtonProps = Omit<BaseButtonProps, "$colorScheme">;
 
 /**
  * Компонент кнопки Warning.

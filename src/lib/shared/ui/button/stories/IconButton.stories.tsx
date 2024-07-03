@@ -2,7 +2,7 @@ import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { IconButton } from "../components/IconButton";
 import "../../../styles/index";
-import DocumentFile from "../../../../../assets/icons/DocumentFile.svg?react";
+import DocumentFile from "../../../icons/DocumentFile.svg?react";
 
 export default {
   title: "Buttons/Icon",

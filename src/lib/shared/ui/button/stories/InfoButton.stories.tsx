@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import ArrowDown from "../../../../../assets/icons/ArrowDown.svg?react";
+import ArrowDown from "../../../icons/ArrowDown.svg?react";
 import { sizeOptions } from "../../../types";
 import { InfoButton } from "../components/InfoButton";
 import "../../../styles/index";

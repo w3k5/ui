@@ -14,20 +14,20 @@
     ".": {
       "import": "./dist/ui.es.js",
       "require": "./dist/ui.umd.js"
-    }
+    },
+    "./dist/": "./dist/"
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
     "watch": "vite build --watch",
     "lint": "eslint --fix",
     "preview": "vite preview",
     "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
-    "sb": "storybook dev -p 3000",
+    "start": "storybook dev -p 3000",
     "build-storybook": "storybook build",
     "prepare": "husky"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@zag-js/checkbox": "^0.59.0",
     "@zag-js/react": "^0.59.0",
     "@zag-js/switch": "^0.59.0",
@@ -80,10 +80,6 @@
     "vite": "^5.3.2",
     "vite-plugin-dts": "^3.9.1",
     "vite-plugin-svgr": "^4.2.0"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   },
   "eslintConfig": {
     "extends": [

@@ -5,7 +5,7 @@ import { TextButtonWrapper } from "../styles/Button.styles.ts";
 import { BaseButton, BaseButtonProps } from "./BaseButton";
 import { Text } from "../../typography";
 
-type PrimaryButtonProps = Omit<BaseButtonProps, "$variant">;
+type PrimaryButtonProps = Omit<BaseButtonProps, "$colorScheme">;
 
 /**
  * Компонент кнопки Primary.
