@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import ArrowDown from "../../../icons/ArrowDown.svg?react";
 import { sizeOptions } from "../../../types";
 import { WarningButton } from "../components/WarningButton";
 import "../../../styles/index";
@@ -23,7 +22,6 @@ export const Default: Story = {
     children: "Warning Button",
     $size: "M",
     disabled: false,
-    endIcon: <ArrowDown />,
   },
 };
 

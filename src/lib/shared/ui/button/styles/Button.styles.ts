@@ -2,7 +2,7 @@ import styled, { css, RuleSet } from "styled-components";
 import { Variant, SizeVariantProps, ColorScheme, Size } from "../../../types";
 import { colorSchemeStyles } from "../../styles/colorSchemeStyles";
 
-const baseButtonSizeStyles = {
+const baseButtonSizeStyles: Record<Size, RuleSet> = {
   "3XS": css`
     border-radius: 6px;
     padding: 2px 6px;
@@ -107,7 +107,7 @@ const baseButtonSvgSizeStyles: Record<Size, RuleSet> = {
   `,
 };
 
-const iconButtonSizeStyles = {
+const iconButtonSizeStyles: Record<Size, RuleSet> = {
   "3XS": css`
     border-radius: 4px;
     padding: 2px;
@@ -134,7 +134,7 @@ const iconButtonSizeStyles = {
   `,
 };
 
-const textStyles = {
+const textStyles: Record<Size, RuleSet> = {
   L: css`
     padding: 0 4px;
   `,
@@ -214,7 +214,7 @@ export const StyledBaseButton = styled.button<SizeVariantProps>`
     getVariantStyles($variant, $colorScheme)};
   outline: none;
   z-index: 1;
-  font-family: "Open Sans", serif; /* Пример использования шрифта */
+  font-family: "Open Sans", serif;
 
   &:enabled {
     cursor: pointer;

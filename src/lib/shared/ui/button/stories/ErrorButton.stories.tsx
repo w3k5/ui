@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import ArrowDown from "../../../icons/ArrowDown.svg?react";
+import { Icon } from "../../icon";
 import { sizeOptions } from "../../../types";
 import { ErrorButton } from "../components/ErrorButton";
 import "../../../styles/index";
@@ -23,7 +23,7 @@ export const Default: Story = {
     children: "Error Button",
     $size: "M",
     disabled: false,
-    endIcon: <ArrowDown />,
+    endIcon: <Icon name={"AccessLock"} />,
   },
 };
 
@@ -32,5 +32,6 @@ export const Disabled: Story = {
     children: "Disabled Error",
     $size: "M",
     disabled: true,
+    endIcon: <Icon name={"AccessLockClock"} />,
   },
 };

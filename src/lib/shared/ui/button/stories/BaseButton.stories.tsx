@@ -1,7 +1,6 @@
 import { ComponentProps } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { BaseButton } from "../components/BaseButton";
-import ArrowDown from "../../../icons/ArrowDown.svg?react";
 import "../../../styles/index";
 
 export default {
@@ -18,8 +17,6 @@ export const Default: Story = {
     $size: "M",
     $variant: "contained",
     $colorScheme: "primary",
-    endIcon: <ArrowDown />,
-    startIcon: <ArrowDown />,
   },
 };
 
