@@ -1,0 +1,42 @@
+import { Canvas, Meta, Markdown, ColorPalette, ColorItem } from "@storybook/addon-docs";
+import { Icon, iconsList } from "../../icon";
+import * as IconStories from './Icon.stories';
+
+<Meta title="Icons/Icon" />
+
+# Icons
+Документация по работе с иконками
+
+## Полезные ссылки
+- [Figma](https://www.figma.com/design/ZhJrs9OxzV03DLeRQxPdDc/G2-Mo%CC%88bius-Icon%26-Illustrations?node-id=126-87&t=HxjU7feAEak9Mq7k-0)
+
+## Формирование имени иконки
+Имена иконок формируются в зависимости от того, как они были названы в фигме
+если в фигме название "Document_File / comparison", то в библиотеке оно будет "DocumentFileComparison"
+
+## Пример использования
+
+```tsx
+import type { FC } from 'react';
+import { Icon } from '@g3/ui';
+
+export const MyComponent: FC = () => (
+  <div>
+    <Icon name="ArrowArrowUp" size={24} />
+    <Icon name="AlertDone" size={32} />
+    <Icon name="NoAccess" size={40} />
+  </div>
+);
+```
+<Canvas of={IconStories.ArrowArrowUp} />
+<Canvas of={IconStories.AlertDone} />
+<Canvas of={IconStories.NoAccess} />
+
+## Список иконок
+
+<ul>
+  {Object.keys(iconsList).map(icon => <li style={{display: "flex", alignItems: "center", gap: '1rem'}}>
+    <span>{icon}</span>
+    <Icon name={icon} size={24} />
+  </li>)}
+</ul>
