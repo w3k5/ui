@@ -19,7 +19,7 @@ type Story = StoryObj<ComponentProps<typeof InfoButton>>;
 
 export const Default: Story = {
   args: {
-    children: "Warning Button",
+    children: "Info Button",
     $size: "M",
     disabled: false,
   },
@@ -27,7 +27,7 @@ export const Default: Story = {
 
 export const Disabled: Story = {
   args: {
-    children: "Disabled Warning",
+    children: "Disabled Info",
     $size: "M",
     disabled: true,
   },
