@@ -28,17 +28,18 @@ jobs:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
         run: npx semantic-release
 
-#  publish-npm:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v4
-#      - uses: actions/setup-node@v4
-#        with:
-#          node-version: 22.8.0
-#          registry-url: https://registry.npmjs.org/
-#      - run: npm ci
-#      - run: npm publish
-#        env:
-#          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-#          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.8.0
+
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          install_command: npm ci
+          build_command: npm run build-storybook
+          path: storybook-static
+          checkout: false
