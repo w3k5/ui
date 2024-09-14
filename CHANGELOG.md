@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/w3k5/ui/compare/v1.2.0...v1.3.0) (2024-09-14)
+
+
+### Features
+
+* **custom:** публикация сторибук на pages ([e5b4927](https://github.com/w3k5/ui/commit/e5b4927a527f4a10dd97fd5ca471c48c52e35c02))
+
 # [1.2.0](https://github.com/w3k5/ui/compare/v1.1.1...v1.2.0) (2024-09-14)
 
 
