@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/w3k5/ui/compare/v1.0.0...v1.1.0) (2024-09-14)
+
+
+### Features
+
+* **custom:** коммит для проверки npm в semantic release ([956840d](https://github.com/w3k5/ui/commit/956840d4e003a8776998ef349400867ee76daeae))
+
 # 1.0.0 (2024-09-14)
 
 
