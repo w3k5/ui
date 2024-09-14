@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/w3k5/ui/compare/v1.1.0...v1.1.1) (2024-09-14)
+
+
+### Bug Fixes
+
+* **custom:** испраление semantic release для обновления версии в package.json ([0b89586](https://github.com/w3k5/ui/commit/0b895863a879cccbe68ee156205ee9aec3fe810a))
+
 # [1.1.0](https://github.com/w3k5/ui/compare/v1.0.0...v1.1.0) (2024-09-14)
 
 
