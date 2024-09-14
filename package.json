@@ -31,7 +31,8 @@
     "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
     "dev": "storybook dev -p 3000",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "semantic-release --debug"
   },
   "peerDependencies": {
     "@zag-js/checkbox": "^0.68.0",

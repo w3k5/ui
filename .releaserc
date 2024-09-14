@@ -16,11 +16,7 @@
         }
     ],
     [
-        "@semantic-release/npm",
-        {
-                "npmPublish": false,
-                "tarballDir": "dist"
-        }
+        "@semantic-release/npm"
     ]
   ]
 }
