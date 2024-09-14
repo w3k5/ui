@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/w3k5/ui/compare/v1.3.0...v1.3.1) (2024-09-14)
+
+
+### Bug Fixes
+
+* **custom:** изменение permissions в скрипте деплоя ([6b30284](https://github.com/w3k5/ui/commit/6b302844b04f7c5900d1385f69d88ec2ccb586fe))
+
 # [1.3.0](https://github.com/w3k5/ui/compare/v1.2.0...v1.3.0) (2024-09-14)
 
 
