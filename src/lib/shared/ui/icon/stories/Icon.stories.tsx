@@ -4,7 +4,7 @@ import "../../../styles/index";
 
 const meta: Meta<typeof Icon> = {
   component: Icon,
-  title: "Icon",
+  title: "Icons/Icon",
 };
 
 export default meta;

@@ -11,11 +11,13 @@
   "module": "./dist/ui.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
+    "./package.json": "./package.json",
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/ui.es.js",
       "require": "./dist/ui.umd.js"
     },
-    "./dist/": "./dist/"
+    "./dist/style.css": "./dist/style.css"
   },
   "scripts": {
     "build": "tsc && vite build",

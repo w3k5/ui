@@ -4,6 +4,10 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import svgLoader from "vite-plugin-svgr";
 
+import { extname, relative } from "path";
+import { fileURLToPath } from "node:url";
+import { glob } from "glob";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -48,5 +52,7 @@ export default defineConfig({
         },
       },
     },
+    sourcemap: true,
+    emptyOutDir: true,
   },
 });

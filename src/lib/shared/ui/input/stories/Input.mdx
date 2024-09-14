@@ -1,0 +1,23 @@
+import { Canvas, Meta, Markdown, ColorPalette, ColorItem } from "@storybook/addon-docs";
+import * as InputStories from './Input.stories'
+
+<Meta title="Inputs/BaseInput" />
+
+# Icons
+Документация по работе с инпутом
+
+## Полезные ссылки
+- [Figma](https://www.figma.com/design/ZhJrs9OxzV03DLeRQxPdDc/G2-Mo%CC%88bius-Icon%26-Illustrations?node-id=126-87&t=HxjU7feAEak9Mq7k-0)
+
+## Пример использования
+
+```tsx
+import type { FC } from 'react';
+import { Input } from '@g3/ui';
+
+export const MyComponent: FC = () => (
+    <Input />
+);
+```
+
+<Canvas of={InputStories.BaseInputStory} />

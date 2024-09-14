@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import { sizeOptions } from "../../../types";
-import { PrimaryButton } from "../components/PrimaryButton";
-import "../../../styles/index";
+import { sizeOptions } from "../../../../types";
+import { PrimaryButton } from "../../components/PrimaryButton";
+import "../../../../styles/index";
 
 export default {
   title: "Buttons/Primary",
