@@ -38,7 +38,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/lib/index.ts"),
-      name: "@w3k5/ui",
+      name: "@weksik/ui",
       formats: ["es", "umd"],
       fileName: (format) => `ui.${format}.js`,
     },
