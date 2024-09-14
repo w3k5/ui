@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/w3k5/ui/compare/v1.3.1...v1.3.2) (2024-09-14)
+
+
+### Bug Fixes
+
+* **custom:** тестовый коммит для обработки pages ([c9bf727](https://github.com/w3k5/ui/commit/c9bf72754da91ade78014d0a77695e4a0df21e69))
+
 ## [1.3.1](https://github.com/w3k5/ui/compare/v1.3.0...v1.3.1) (2024-09-14)
 
 
