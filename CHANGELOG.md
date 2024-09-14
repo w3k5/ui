@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/w3k5/ui/compare/v1.1.1...v1.2.0) (2024-09-14)
+
+
+### Features
+
+* **custom:** добавление @semantic-release/github ([a559b44](https://github.com/w3k5/ui/commit/a559b444f8e4ac8303d9992d5413be11e7241665))
+
 ## [1.1.1](https://github.com/w3k5/ui/compare/v1.1.0...v1.1.1) (2024-09-14)
 
 
