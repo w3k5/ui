@@ -46,7 +46,7 @@
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^10.3.3",
+    "@semantic-release/github": "^10.3.4",
     "@semantic-release/npm": "^12.0.1",
     "@storybook/addon-docs": "^8.3.0",
     "@storybook/addon-essentials": "^8.3.0",
@@ -61,6 +61,7 @@
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "@weksik/eslint": "^1.1.0",
     "babel-plugin-styled-components": "^2.1.4",
     "commitizen": "^4.3.0",
     "commitlint": "^19.5.0",
