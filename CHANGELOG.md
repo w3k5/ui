@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/w3k5/ui/compare/v1.3.2...v1.3.3) (2024-09-15)
+
+
+### Bug Fixes
+
+* **custom:** изменил имя кнопки в сторибуке. Для Info писалось Warning ([8c6783f](https://github.com/w3k5/ui/commit/8c6783fec222dac40bfa33dea9af21b425ae56ab))
+
 ## [1.3.2](https://github.com/w3k5/ui/compare/v1.3.1...v1.3.2) (2024-09-14)
 
 
