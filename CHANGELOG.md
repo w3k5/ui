@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/w3k5/ui/compare/v1.3.3...v1.4.0) (2024-09-15)
+
+
+### Features
+
+* **custom:** обновление зависимостей ([705f629](https://github.com/w3k5/ui/commit/705f6294e37b57e6ad1e522aa8016b906d1c16f1))
+
 ## [1.3.3](https://github.com/w3k5/ui/compare/v1.3.2...v1.3.3) (2024-09-15)
 
 
