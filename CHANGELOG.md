@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/w3k5/ui/compare/v1.4.0...v1.5.0) (2025-01-24)
+
+
+### Features
+
+* **custom:** обновление зависимостей ([0224158](https://github.com/w3k5/ui/commit/0224158c4db7260c0f67f79e6c4e07000bf47e67))
+
 # [1.4.0](https://github.com/w3k5/ui/compare/v1.3.3...v1.4.0) (2024-09-15)
 
 
