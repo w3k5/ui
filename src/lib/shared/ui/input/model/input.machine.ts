@@ -29,40 +29,40 @@ export enum EVENTS_TYPE {
   CLEAR = "CLEAR",
 }
 
-interface FocusEvent extends StateMachine.EventObject {
+export interface FocusEvent extends StateMachine.EventObject {
   type: EVENTS_TYPE.FOCUS;
   event: React.FocusEvent<HTMLInputElement>;
 }
 
-interface BlurEvent extends StateMachine.EventObject {
+export interface BlurEvent extends StateMachine.EventObject {
   type: EVENTS_TYPE.BLUR;
   value: string;
   event: React.FocusEvent<HTMLInputElement>;
 }
 
-interface ChangeEvent extends StateMachine.EventObject {
+export interface ChangeEvent extends StateMachine.EventObject {
   type: EVENTS_TYPE.CHANGE;
   value: string;
   event: React.ChangeEvent<HTMLInputElement>;
 }
 
-interface PasteEvent extends StateMachine.EventObject {
+export interface PasteEvent extends StateMachine.EventObject {
   type: EVENTS_TYPE.PASTE;
   value: string;
   event: React.ClipboardEvent<HTMLInputElement>;
 }
 
-interface ClearEvent extends StateMachine.EventObject {
+export interface ClearEvent extends StateMachine.EventObject {
   type: EVENTS_TYPE.CLEAR;
   event: React.MouseEvent;
 }
 
-interface LabelClickEvent extends StateMachine.EventObject {
+export interface LabelClickEvent extends StateMachine.EventObject {
   type: EVENTS_TYPE.LABEL_CLICK;
   event: React.MouseEvent;
 }
 
-type MachineEvent =
+export type MachineEvent =
   | FocusEvent
   | BlurEvent
   | ChangeEvent

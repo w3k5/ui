@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, JSX } from "react";
 import * as Styled from "../styles/Typography.styles.ts";
 import { TitleProps, TextProps } from "../types.ts";
 
@@ -10,6 +10,7 @@ export const Title: FC<TitleProps> = ({
 }) => {
   const HeadingTag = `h${$level}` as keyof JSX.IntrinsicElements;
 
+  //
   return (
     <Styled.Title
       as={HeadingTag}
